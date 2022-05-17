@@ -1,7 +1,7 @@
 .idea/
 outputs/
-**/results/
-**/datasets/*/*.csv
+# **/results/
+# **/datasets/*/*.csv
 *venv*
 .DS_Store
 *.swp
