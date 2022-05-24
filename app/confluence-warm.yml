@@ -62,7 +62,7 @@ execution:
     hold-for: ${test_duration}
 scenarios:
   jmeter:
-    script: jmeter/confluence.jmx
+    script: jmeter/confluence-warm.jmx
     properties:
       application_hostname: ${application_hostname}
       application_protocol: ${application_protocol}
