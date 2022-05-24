@@ -14,25 +14,25 @@ settings:
     admin_password: admin
     load_executor: jmeter # jmeter and locust are supported. jmeter by default.
     concurrency: 200 # number of concurrent virtual users for jmeter or locust scenario
-    test_duration: 5m
-    ramp-up: 5m # time to spin all concurrent users
+    test_duration: 10m
+    ramp-up: 2m # time to spin all concurrent users
     total_actions_per_hour: 20000
     WEBDRIVER_VISIBLE: False
     JMETER_VERSION: 5.4.2
     LANGUAGE: en_US.utf8
     allow_analytics: Yes # Allow sending basic run analytics to Atlassian. These analytics help us to understand how the tool is being used and help us to continue to invest in this tooling. For more details please see our README.
     # Action percentage for JMeter and Locust load executors
-    view_page: 43
-    view_dashboard: 8
+    view_page: 60
+    view_dashboard: 10
     view_blog: 10
-    search_cql: 9
-    create_blog: 3
-    create_and_edit_page: 7
-    comment_page: 6
-    view_attachment: 4
-    upload_attachment: 5
-    like_page: 2
-    standalone_extension: 3 # By default disabled
+    search_cql: 10
+    create_blog: 0
+    create_and_edit_page: 0
+    comment_page: 0
+    view_attachment: 10
+    upload_attachment: 0
+    like_page: 0
+    standalone_extension: 0 # By default disabled
     # Custom dataset section.
     custom_dataset_query: # Write CQL query to add CQL output to the app/datasets/confluence/custom_pages.csv, e.g. "title ~ 'AppPage*'"
 services:
@@ -61,10 +61,6 @@ execution:
     runner: pytest
     hold-for: ${test_duration}
 scenarios:
-  selenium:
-    script: selenium_ui/confluence_ui.py
-  locust:
-    script: locustio/confluence/locustfile.py
   jmeter:
     script: jmeter/confluence.jmx
     properties:
