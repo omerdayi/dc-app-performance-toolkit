@@ -56,10 +56,6 @@ execution:
     concurrency: ${concurrency}
     hold-for: ${test_duration}
     ramp-up: ${ramp-up}
-  - scenario: selenium
-    executor: selenium
-    runner: pytest
-    hold-for: ${test_duration}
 scenarios:
   jmeter:
     script: jmeter/confluence-warm.jmx
